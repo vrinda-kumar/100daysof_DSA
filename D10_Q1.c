@@ -1,0 +1,28 @@
+// Read a string and check if it is a palindrome using two-pointer comparison.
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main()
+{
+    char str[1000];
+    scanf("%999s", str);   // safer input
+    
+    int left = 0;
+    int right = strlen(str) - 1;
+    bool isPalindrome = true;
+
+    while (left < right)
+    {
+        if (str[left] != str[right])
+        {
+            isPalindrome = false;
+            break;
+        }
+        left++;
+        right--;
+    }
+
+    printf("%s\n", isPalindrome ? "YES" : "NO");
+    return 0;
+}
